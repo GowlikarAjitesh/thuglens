@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThugLens</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+    <style>
+        @media screen and (max-width: 425px) {
+            .body{
+                width: 425px;
+            }
+            .box{
+                flex-direction: column;
+                float: left;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .box{
+                flex-direction: column;
+                float: left;
+            }
+        }
+        body {
+            background-image: url('img/background.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        
+        #defaultCanvas0{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            height: auto;
+            border: 2px solid white;
+            border-radius: 5%;
+        }
+        h1{
+            text-align: center;
+            color: rgb(255, 0, 0);
+            margin-top: 5%;
+            display: inline-block;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5%;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        #canvasContainer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            width: auto;
+            float: left;
+        }
+        .bar{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10%;
+            padding: 10% 10%;
+            margin: 2%;
+
+        }
+        canvas{
+            width: 0;
+            height: 0;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>SKELETON</h1></center>
+    <div class="container">
+        <div class="bar">
+            <h1 class="imge">Lens</h1>
+            <img src="img/goggles.png"  class="imge" onClick="img1()" alt="">
+            <img src="img/goldChain.png"  class="imge" onClick="img2()" alt="">
+            <img src="img/mouth.png" class="imge"  onClick="img3()" alt="">
+            <center><img src="img/face.png"  class="imge" onClick="img4()" alt=""></center>
+            <img src="img/noFace.png"  class="imge" onClick="img5()" alt="">
+        </div>
+    <div id="canvasContainer" width="auto" height="auto">
+        <canvas data-processing-sources="rectangles.pde" id="canvas"></canvas>
+    </div>
+</div>
+<script src="sketch.js"></script>
+</body>
+</html>
